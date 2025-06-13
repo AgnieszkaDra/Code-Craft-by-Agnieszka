@@ -1,0 +1,29 @@
+import data from '../data/data';
+import NavigationLink from './NavigationLink';
+
+const Menu = () => {
+  const menu = data.menu;
+  const root = menu[0];
+  const menuIds = root.childIds;
+
+  return (
+    <ul className={`menu`}>
+      {menuIds?.map((id: number) => {
+        const menuItem = menu[id];
+        return (
+          <li key={id} className={`menu__item`}>
+            {menuItem.path && (
+              <NavigationLink
+                to={menuItem.path || '#'}
+                value={menuItem.title || 'Untitled'}
+                className={'menu__link'}
+              />
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+export default Menu;

@@ -1,0 +1,133 @@
+@use './abstracts/index' as *;
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-top: 6.5rem;
+  padding: 0;
+  @include flexAbsoluteCenter;
+    &__mobile {
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    padding: map-get($padding, medium);
+    background-color: $color-background-dark;
+    box-sizing: border-box;
+    @include respond(md, lg, xl) {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateX(100%);
+  background-color: $color-background-dark;
+  @include flexAbsoluteCenter();
+  &__logo {
+    display: none;
+    margin-right: auto;
+    @include respond(md, lg, xl){
+      display: block;
+    }
+    font-weight: 700;
+    font-size: map-get($font-size, extra-large);
+    line-height: 100%;   
+    letter-spacing: -0.29px;
+    &--note {
+        font-size: map-get($font-size, normal);
+        letter-spacing: 5px;
+        font-style: italic;
+        font-weight: map-get($font-weight, large);
+        margin-left: 1rem;
+    } 
+  }
+
+  &.open {
+    transform: translate(0%);
+    transition: transform 1.5s linear;
+  }
+  
+  @include respond(md, lg, xl){
+    position: relative;
+    display: flex;
+    transform: translate(0);
+  }
+
+}
+  
+.menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  padding-top: 10rem;
+  margin-left: auto;
+ 
+  & > * {
+    @include flexAbsoluteCenter();
+  }
+
+  &__item {
+    padding: map-get($padding, large);
+  
+    @include respond(md, lg, xl) {
+      padding: 0;
+    }
+  }
+
+  @include respond(md, lg, xl) {
+    height: 0;
+    padding-top: 0;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+    margin-left: auto;
+    
+  }
+
+  @include respond(lg) {
+    width: 40.75%;
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: $white;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover{
+      opacity: 30%;
+    }
+
+  }
+
+  &__item {
+
+    &:active {
+      background-color: $color-action-third;
+      width: 120px;
+      height: 2rem;
+      border-radius: 100px;
+      @include flexAbsoluteCenter();
+      overflow: visible;
+      @include respond(md, lg) {
+      height: 40px;
+      }
+    }
+
+  }
+}
