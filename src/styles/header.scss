@@ -91,14 +91,13 @@
     height: 0;
     padding-top: 0;
     flex-direction: row;
-    width: 70%;
+    width: 40%;
     justify-content: space-between;
     margin-left: auto;
-    
-  }
+    }
 
   @include respond(lg) {
-    width: 40.75%;
+    width: 45%;
   }
 
   &__link {

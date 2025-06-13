@@ -1,0 +1,38 @@
+@use './abstracts/index' as *;
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    @include respond(lg, xl) {
+        display: flex;
+        flex-direction: row;
+    }
+    &__panel {
+        flex: 100%;
+        
+    }
+    
+}
+
+.panel {
+   
+    @include respond(md, lg, xl) {
+      margin-top: 10.4rem;
+}
+    & > * {
+        text-align: center;
+        //  @include respond(md, lg, xl) {
+        //     text-align: start;  
+        // } 
+    }
+    &__description {
+         width: auto;
+        // @include respond(md, lg, xl) {
+        //     width: 85%;
+        // } 
+        margin: 3rem 0;
+    }
+   
+}
