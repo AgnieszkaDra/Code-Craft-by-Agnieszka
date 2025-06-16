@@ -1,8 +1,8 @@
-import menuData from '../data/menuData';
+import data from '../data/data';
 import NavigationLink from './NavigationLink';
 
 const Menu = () => {
-  const menu = menuData.menu;
+  const menu = data.menu;
   const root = menu[0];
   const menuIds = root.childIds;
 
