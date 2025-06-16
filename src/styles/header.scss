@@ -33,10 +33,12 @@
   top: 0;
   transform: translateX(100%);
   background-color: $color-background-dark;
-  @include flexAbsoluteCenter();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &__logo {
     display: none;
-    margin-right: auto;
+    
     @include respond(md, lg, xl){
       display: block;
     }
@@ -71,10 +73,9 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
   padding-top: 10rem;
   margin-left: auto;
- 
+  color: $white;
   & > * {
     @include flexAbsoluteCenter();
   }
@@ -83,7 +84,7 @@
     padding: map-get($padding, large);
   
     @include respond(md, lg, xl) {
-      padding: 0;
+      padding: 10px;
     }
   }
 
@@ -91,14 +92,12 @@
     height: 0;
     padding-top: 0;
     flex-direction: row;
-    width: 40%;
-    justify-content: space-between;
-    margin-left: auto;
-    }
+    width: 310px;
 
-  @include respond(lg) {
-    width: 45%;
-  }
+    }
+    &__title {
+      color: $white;
+    }
 
   &__link {
     font-size: 1.8rem;
@@ -111,22 +110,39 @@
     &:hover{
       opacity: 30%;
     }
-
   }
 
   &__item {
-
-    &:active {
-      background-color: $color-action-third;
-      width: 120px;
-      height: 2rem;
-      border-radius: 100px;
-      @include flexAbsoluteCenter();
-      overflow: visible;
-      @include respond(md, lg) {
-      height: 40px;
+    position: relative;
+      &--chevron-down {
+        margin-left: 9px;
       }
-    }
+    // &:active {
+    //   background-color: $color-action-third;
+    //   width: 120px;
+    //   height: 2rem;
+    //   border-radius: 100px;
+    //   @include flexAbsoluteCenter();
+    //   overflow: visible;
+    //   @include respond(md, lg) {
+    //   height: 40px;
+    //   }
+    // }
 
   }
-}
+
+
+  &__submenu {
+    position: absolute;
+    top: 100%;
+    margin-right: auto;
+   & > * {
+margin-top: 7px;
+    
+    .menu__link {
+    
+      
+   }
+    
+  }
+}}

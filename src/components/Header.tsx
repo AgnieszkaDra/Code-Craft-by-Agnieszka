@@ -30,8 +30,9 @@ const Header = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.4, duration: 0.6 }}
     >
-      <Logo />
       <Menu />
+      <Logo />
+      <h2>Tłumaczenie</h2>
     </motion.nav>
   </motion.header>
   );

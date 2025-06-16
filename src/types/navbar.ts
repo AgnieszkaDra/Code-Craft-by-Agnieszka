@@ -19,6 +19,7 @@ export interface MenuItem {
 
 export interface MenuData {
   menu: Record<number, MenuItem>;
+  menuItem: MenuItem;
 }
 
 export type MenuProps = {

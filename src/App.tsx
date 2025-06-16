@@ -1,6 +1,7 @@
 import { Header, Panel } from './components';
 import { Main } from './components';
 import '../src/styles/index.scss';
+//import Projects from './components/Projects';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Main>
         <Panel className="main__panel" />
+        {/* <Projects/> */}
         {/* <Outlet /> */}
       </Main>
     </div>
