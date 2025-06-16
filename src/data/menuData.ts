@@ -1,6 +1,6 @@
 import type { MenuData } from '../types/navbar';
 
-export const data: MenuData = {
+export const menuData: MenuData = {
   menu: {
     0: {
       id: 0,
@@ -31,7 +31,9 @@ export const data: MenuData = {
   },
 };
 
-export default data;
+export default menuData;
+
+
 
 
 
