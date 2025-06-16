@@ -22,7 +22,7 @@ const MenuItemComponent = ({ id, menu }: MenuItemProps): JSX.Element => {
   const toggle = () => setOpen((prev) => !prev);
 
   return (
-    <li className="menu__item text paragraph" onClick={toggle}>
+    <li className="menu__item text p paragraph" onClick={toggle}>
       {item.path ? (
         <Link to={item.path} className="menu__link">
           {item.title}

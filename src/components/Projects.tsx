@@ -11,10 +11,11 @@ const Projects = (): JSX.Element => {
 
   return (
     <ul className="projects">
+        <p className='text p label'>projekty</p>
       {projectsIds?.map((id: number) => {
-        const projectItem = projects[id];
+        const projectItem: ProjectItem = projects[id];
         return (
-          <li key={id} className="projects__item">
+          <li key={id} className="projects__item text p article">
             {projectItem.url && (
               <NavigationLink
                 to={projectItem.url}

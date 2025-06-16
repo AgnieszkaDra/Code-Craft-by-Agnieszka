@@ -4,7 +4,9 @@
   position: relative;
   width: 100%;
   height: 40px;
-  margin-top: 6.5rem;
+  //margin-top: 6.5rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 0;
   @include flexAbsoluteCenter;
     &__mobile {
