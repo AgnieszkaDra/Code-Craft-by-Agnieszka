@@ -10,8 +10,6 @@
         justify-content: space-between;
         flex-direction: row;
     }
-   
-    
 }
 
 .panel {
@@ -28,11 +26,34 @@
 }
 
 .projects {
-    width: 9%;
+   
     &__item {
         opacity: 70%;
         text-align: left;
        margin-top:13px; ;
     }
+
+    &-carousel {
+        width: 40,71%;
+        height: 262px;
+    }
    
+}
+
+.carousel {
+    &__content {
+        width: 100%;
+        height: 100%;
+    }
+    &__item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

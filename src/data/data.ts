@@ -1,4 +1,7 @@
 import type { Data } from '../types/data';
+import shopTsImage from '../assets/images/shop-ts.jpeg';
+import shopTsPart1 from '../assets/images/shop-ts-part1.jpeg';
+import shopTsPart2 from '../assets/images/shop-ts-part2.jpeg';
 
 export const data: Data = {
   menu: {
@@ -33,6 +36,8 @@ export const data: Data = {
     },
     1: {
       id: 1,
+      background: shopTsImage,
+      images: [shopTsImage, shopTsPart1, shopTsPart2],
       title: 'Shop TS',
       url: 'https://github.com/AgnieszkaDra/shop-TS',
       description: 'This project is an e-commerce web application built using TypeScript, json-server, and Vite. The application features a client-side interface for users to browse products, manage a shopping cart, and place orders. On the admin side, there’s an interface for managing orders and tracking their status.',

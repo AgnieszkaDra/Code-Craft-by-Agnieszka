@@ -3,11 +3,13 @@
 .header {
   position: relative;
   width: 100%;
-  height: 40px;
+  margin: auto;
+  
   //margin-top: 6.5rem;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid rgba($grey, 0.3);
+ 
   @include flexAbsoluteCenter;
     &__mobile {
     display: flex;
@@ -31,6 +33,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  max-width: 1168px;
   left: 0;
   top: 0;
   transform: translateX(100%);

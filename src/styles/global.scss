@@ -60,17 +60,14 @@ button {
 // Root Container
 // ==============================
 
-#root {
-  @include flexAbsoluteCenter();
-}
-
 
 .container {
   padding: 0 2rem;
+  margin: auto;
   @include respond(md, lg, xl) {
     padding: 0;
   }
   width: 100%;
-  max-width: 972px;
+  max-width: 1168px;
   //margin-top: 6.5rem;
 }
