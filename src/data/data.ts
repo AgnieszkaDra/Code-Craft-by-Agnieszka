@@ -40,7 +40,8 @@ export const data: Data = {
       images: [shopTsImage, shopTsPart1, shopTsPart2],
       title: 'Shop TS',
       url: 'https://github.com/AgnieszkaDra/shop-TS',
-      description: 'This project is an e-commerce web application built using TypeScript, json-server, and Vite. The application features a client-side interface for users to browse products, manage a shopping cart, and place orders. On the admin side, there’s an interface for managing orders and tracking their status.',
+      description: 'This project is an e-commerce web application built using TypeScript, json-server, and Vite. The application features a client-side interface for users to browse products, manage a shopping cart, and place orders.' 
+      //'On the admin side, there’s an interface for managing orders and tracking their status.',
     },
     2: {
       id: 2,

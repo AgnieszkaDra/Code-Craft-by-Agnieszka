@@ -5,7 +5,7 @@ import type { Data } from '../types/data';
 import type { JSX } from 'react';
 import List from '../ui/List';
 
-const Projects = (): JSX.Element => {
+const ProjectsList = (): JSX.Element => {
   const projects: Data['projects'] = data.projects;
   const root: ProjectItem = projects[0];
   const projectsIds = root.childIds;
@@ -21,7 +21,12 @@ const Projects = (): JSX.Element => {
     ) : null;
   }) ?? [];
 
-  return <List items={items} className="projects" />;
+  return (
+    <>
+   
+    <List items={items} className="projects-list" label='projekty'/>
+    </>
+    )
 };
 
-export default Projects;
+export default ProjectsList;

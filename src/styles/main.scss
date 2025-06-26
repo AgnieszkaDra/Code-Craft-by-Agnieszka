@@ -26,34 +26,99 @@
 }
 
 .projects {
-   
-    &__item {
+    &-list {
+        & > * {
+            text-align: start;
+        }
+        &__item {
         opacity: 70%;
         text-align: left;
-       margin-top:13px; ;
+        &:first-of-type {
+            margin-top: 25px;
+        }
     }
 
     &-carousel {
         width: 40,71%;
         height: 262px;
     }
-   
+    }
+    &-main {
+       width: 40.71%; 
+    }
+    &-carousel {
+        height: 267px;
+        background-color: $white;
+        border-radius: 10px;
+        color: $heading;
+        &__item {
+            padding: 10%;
+        }
+    }
 }
 
+
+
 .carousel {
-    &__content {
-        width: 100%;
-        height: 100%;
-    }
-    &__item {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+   
+    
     &__images {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+
+
+.dots-paginator {
+  display: flex;
+  gap: 6px;
+  margin: 0 12px;
+
+  .dot {
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid $white;
+
+    &--turcoise {
+      border-color: $color-action-turcoise;
+
+      &.dot--active {
+        background-color: $color-action-turcoise;
+      }
+    }
+
+    &--navy {
+      border-color: $color-action-navy;
+
+      &.dot--active {
+        background-color: $color-action-navy;
+      }
+    }
+
+    &--coral {
+      border-color: $color-action-coral;
+
+      &.dot--active {
+        background-color: $color-action-coral;
+      }
+    }
+
+    
+  }
+}
+
+
+$dot-sizes: (
+  sm: 6px,
+  md: 10px,
+  lg: 14px
+);
+
+@each $size, $value in $dot-sizes {
+  .dot--#{$size} {
+    width: $value;
+    height: $value;
+  }
 }

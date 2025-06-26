@@ -1,8 +1,8 @@
 import { Header, Panel } from './components';
 import { Main } from './components';
 import '../src/styles/index.scss';
-import Projects from './components/Projects';
-import ProjectsCarousel from './components/ProjectsCarousel';
+import ProjectsList from './components/ProjectsList';
+import ProjectsMain from './components/ProjectsMain';
 
 function App() {
 
@@ -11,8 +11,8 @@ function App() {
     <Header />
     <div className="container">
       <Main>
-        <Projects/>
-        <ProjectsCarousel className={'projects-carousel'}/>
+        <ProjectsList/>
+        <ProjectsMain/>
         <Panel className="main__panel" />
         {/* <Outlet /> */}
       </Main>

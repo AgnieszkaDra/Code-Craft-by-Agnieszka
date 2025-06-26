@@ -1,36 +1,37 @@
-import { useState, type ReactNode, type ReactElement} from 'react';
+import { useState,type ReactElement } from 'react';
+import { PaginatorBase } from './paginators/PaginatorBase';
 
 interface CarouselProps<T> {
   items: T[];
-  renderItem: (item: T, index: number) => ReactNode;
+  renderItem: (item: T, index: number) => ReactElement;
+  paginator?: PaginatorBase;
   className?: string;
 }
 
-export function Carousel<T>({ items, renderItem, className=''}: CarouselProps<T>): ReactElement {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export function Carousel<T>({
+  items,
+  renderItem,
+  paginator,
+  className = '',
+}: CarouselProps<T>): ReactElement {
+  const [index, setIndex] = useState(0);
+  const length = items.length;
 
-  if (items.length === 0) return <p>No items to display.</p>;
-
-  const prev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
-  };
-
-  const next = () => {
-    setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
-  };
+  const goTo = (i: number) => setIndex(i);
+  const next = () => setIndex((prev) => (prev + 1) % length);
+  const prev = () => setIndex((prev) => (prev - 1 + length) % length);
 
   return (
     <div className={`carousel ${className}`}>
-      <div className="carousel__content">
-        {renderItem(items[currentIndex], currentIndex)}
-      </div>
-      <div className="carousel__controls">
-        <button onClick={prev} aria-label="Previous item">Previous</button>
-        <span>{currentIndex + 1} / {items.length}</span>
-        <button onClick={next} aria-label="Next item">Next</button>
-      </div>
+      <div className="carousel__content">{renderItem(items[index], index)}</div>
+      {paginator?.render({ 
+        currentIndex: index, 
+        length, 
+        goTo, 
+        next, 
+        prev,
+        className: `paginator ${className}`,
+      })}
     </div>
   );
 }
-
-export default Carousel;
