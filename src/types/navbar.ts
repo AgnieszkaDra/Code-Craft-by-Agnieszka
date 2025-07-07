@@ -11,7 +11,7 @@ export type NavigationLinkProps = {
 
 export interface MenuItem {
   id: number;
-  title?: string;
+  label?: string;
   path?: string;
   name?: string;
   childIds?: number[];

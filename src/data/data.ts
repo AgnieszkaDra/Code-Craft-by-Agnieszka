@@ -8,44 +8,38 @@ export const data: Data = {
     0: {
       id: 0,
       name: '(Root)',
-      title: 'Menu',
-      childIds: [1],
+      label: 'Menu',
+      childIds: [1, 2],
     },
     1: {
       id: 1,
-      title: 'O mnie',
-      childIds: [2, 3],
+      label: 'Projekty',
+      path: '/Projekty',
     },
     2: {
       id: 2,
-      title: 'Projekty',
-      path: '/Projekty',
-    },
-    3: {
-      id: 3,
-      title: 'Kontakt',
-      path: '/Kontakt',
+      label: 'Zdjęcia',
+      path: '/Zdjęcia',
     },
   },
   projects: {
     0: {
       id: 0,
       name: '(Root)',
-      title: 'Menu',
+      label: 'Menu',
       childIds: [1, 2],
     },
     1: {
       id: 1,
       background: shopTsImage,
       images: [shopTsImage, shopTsPart1, shopTsPart2],
-      title: 'Shop TS',
+      label: 'Shop TS',
       url: 'https://github.com/AgnieszkaDra/shop-TS',
       description: 'This project is an e-commerce web application built using TypeScript, json-server, and Vite. The application features a client-side interface for users to browse products, manage a shopping cart, and place orders.' 
-      //'On the admin side, there’s an interface for managing orders and tracking their status.',
     },
     2: {
       id: 2,
-      title: 'Hall Reservation',
+      label: 'Hall Reservation',
       url: 'https://github.com/AgnieszkaDra/Hall-Reservation',
       description: 'This project is a Hall Reservation System being developed in pure TypeScript, following Object-Oriented Programming (OOP) principles. The goal is to create a structured, maintainable, and scalable application for managing hall reservations efficiently',
     },

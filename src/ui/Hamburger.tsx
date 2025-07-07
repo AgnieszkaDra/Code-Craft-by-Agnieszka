@@ -8,9 +8,8 @@ const Hamburger = ({ navbarOpen, toggleNavbar }: HamburgerProps) => {
     <motion.button
       className={`burger-menu ${navbarOpen ? 'open' : ''}`}
       onClick={toggleNavbar}
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      whileHover={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
+      initial={{ scale: 0.8, opacity: 0, backgroundColor: 'transparent'}}
+      animate={{ scale: 1, opacity: 1, backgroundColor: 'transparent' }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
     >
       <motion.div
