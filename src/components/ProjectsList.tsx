@@ -15,7 +15,7 @@ const ProjectsList = (): JSX.Element => {
     return projectItem.url ? (
       <NavigationLink
         to={projectItem.url}
-        value={projectItem.title || 'Untitled'}
+        value={projectItem.label || 'Untitled'}
         className="projects__link"
       />
     ) : null;

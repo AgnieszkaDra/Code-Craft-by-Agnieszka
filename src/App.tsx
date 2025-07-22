@@ -3,6 +3,7 @@ import { Main } from './components';
 import '../src/styles/index.scss';
 import ProjectsList from './components/ProjectsList';
 import ProjectsMain from './components/ProjectsMain';
+import { Outlet } from 'react-router-dom';
 
 function App() {
  
@@ -14,7 +15,7 @@ function App() {
           <ProjectsList />
           <ProjectsMain />
           <Panel className="main__panel" />
-          {/* <Outlet /> */}
+          <Outlet />
         </Main>
       </div>
     </>
