@@ -8,17 +8,15 @@ import { Outlet } from 'react-router-dom';
 function App() {
  
   return (
-    <>
+    <div className="container">
       <Header />
-      <div className="container">
         <Main>
           <ProjectsList />
           <ProjectsMain />
           <Panel className="main__panel" />
           <Outlet />
         </Main>
-      </div>
-    </>
+    </div>
   );
 }
 

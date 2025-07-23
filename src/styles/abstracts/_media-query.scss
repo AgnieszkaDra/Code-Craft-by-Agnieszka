@@ -1,25 +1,28 @@
+$viewport-xs: 23.4375rem;
+$viewport-sm: 36rem;
+$viewport-md: 48rem;
+$viewport-lg: 64rem;
+$viewport-xl: 90rem;
+
 @mixin respond($breakpoints...) {
   @each $breakpoint in $breakpoints {
-    @if $breakpoint == xs {
-      @media only screen and (max-width: 480px) {
-        @content;
-      }
-    } @else if $breakpoint == sm {
-      @media only screen and (min-width: 481px) and (max-width: 767px) {
+    @if $breakpoint == sm {
+      @media (min-width: $viewport-sm) {
         @content;
       }
     } @else if $breakpoint == md {
-      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      @media (min-width: $viewport-md) {
         @content;
       }
     } @else if $breakpoint == lg {
-      @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+      @media (min-width: $viewport-lg) {
         @content;
       }
     } @else if $breakpoint == xl {
-      @media only screen and (min-width: 1440px) {
+      @media (min-width: $viewport-xl) {
         @content;
       }
     }
   }
 }
+
