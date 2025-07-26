@@ -34,6 +34,21 @@ body {
   background-color: $color-background-dark;
   color: $white;
   overflow-x: hidden;
+  padding: map-get($padding, large);
+}
+
+@media (min-width: $viewport-md) {
+  body {
+    padding-block: 1.5rem;
+    padding-inline: clamp(1.5rem, 5vw, 4.875rem);
+  }
+}
+
+@media (min-width: $viewport-lg) {
+  body {
+    padding-block: $spacing-300;
+    padding-inline: clamp(4.875rem, 6vw, 10.125rem);
+  }
 }
 
 li {
