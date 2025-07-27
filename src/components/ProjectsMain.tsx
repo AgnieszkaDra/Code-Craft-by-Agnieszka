@@ -23,7 +23,7 @@ const ProjectsMain = ({ className = '' }: ProjectsCarouselProps): ReactElement =
         renderItem={(project) => (
           <div className="projects-carousel__item" key={project.id}>
             <h5 className="h5-lead lead carousel__title">{project.label}</h5>
-            <p className="text description carousel__description">{project.description}</p>
+            <p className="text text-description carousel__description">{project.description}</p>
             {project.url && (
               <a
                 href={project.url}

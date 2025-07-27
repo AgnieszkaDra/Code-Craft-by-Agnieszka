@@ -15,8 +15,8 @@ const MenuItemComponent = ({ id, menu }: MenuItemProps): JSX.Element | null => {
   if (!item) return null;
 
   return (
-    <li className="menu__item text p paragraph" role="none">
-      <Link to={item.path ?? '#'} className="menu__link" role="menuitem">
+    <li className="menu__item text" role="none">
+      <Link to={item.path ?? '#'} className="menu__link text" role="menuitem">
         {item.label}
       </Link>
     </li>

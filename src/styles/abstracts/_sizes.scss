@@ -1,3 +1,7 @@
+@use "sass:map" as map;
+@use "sass:math";
+@use "sass:string";
+
 $font-size: (
   small: 0.75rem,
   extra-small: 1rem,
@@ -6,6 +10,33 @@ $font-size: (
   large: 2.4rem,
   extra-large: 4.2rem
 );
+
+$viewport-min: 320px;
+$viewport-max: 1440px;
+
+// @mixin fluid-font-size($min-size, $max-size) {
+//   font-size: clamp(
+//     #{$min-size},
+//     calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$viewport-min}) / (#{$viewport-max} - #{$viewport-min}))),
+//     #{$max-size}
+//   );
+// }
+
+@mixin fluid-font-size($min, $max) {
+  $min-value: math.div(strip-unit($min), 1);
+  $max-value: math.div(strip-unit($max), 1);
+  $unit: unit($min);
+
+  font-size: clamp(
+    #{$min},
+    calc(#{$min-value}#{$unit} + (#{$max-value - $min-value}) * ((100vw - 320px) / (1280 - 320))),
+    #{$max}
+  );
+}
+
+
+
+
 
 $padding: (
   small: 0.5rem 1rem,
@@ -31,3 +62,10 @@ $spacing-200: 1rem;
 $spacing-300: 1.5rem;   
 $spacing-400: 2rem;     
 $spacing-500: 2.5rem;  
+
+@mixin apply-font-preset($preset) {
+  $min: map.get($preset, min-size);
+  $max: map.get($preset, max-size);
+  @include fluid-font-size($min, $max);
+}
+
