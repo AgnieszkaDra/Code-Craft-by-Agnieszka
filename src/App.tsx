@@ -10,12 +10,12 @@ function App() {
   return (
     <div className="container">
       <Header />
-        <Main>
-          <ProjectsList />
-          <ProjectsMain />
-          <Panel className="main__panel" />
-          <Outlet />
-        </Main>
+      <Main>
+        <ProjectsList />
+        <ProjectsMain />
+        <Panel className="main__panel" />
+        <Outlet />
+      </Main>
     </div>
   );
 }

@@ -9,17 +9,27 @@ export const data: Data = {
       id: 0,
       name: '(Root)',
       label: 'Menu',
-      childIds: [1, 2],
+      childIds: [1, 2, 3,4],
     },
     1: {
       id: 1,
-      label: 'Projekty',
-      path: '/Projekty',
+      label: 'Strona główna',
+      path: '/Strona-glowna',
     },
     2: {
       id: 2,
-      label: 'Zdjęcia',
-      path: '/Zdjęcia',
+      label: 'O mnie',
+      path: '/O-mnie',
+    },
+    3: {
+      id: 3,
+      label: 'Projekty',
+      path: '/Projekty',
+    },
+    4: {
+      id: 4,
+      label: 'Kontakt',
+      path: '/Kontakt',
     },
   },
   projects: {
