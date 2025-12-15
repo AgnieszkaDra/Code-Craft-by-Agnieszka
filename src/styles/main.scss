@@ -5,10 +5,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 52px;
+    min-height: 100vh;
     @include respond(lg, xl) {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        align-items: flex-start;
     }
 }
 
@@ -27,6 +29,7 @@
 
 .projects {
     &-list {
+      width: 100%;
         & > * {
             text-align: start;
         }
@@ -39,7 +42,7 @@
     }
 
     &-carousel {
-        width: 40,71%;
+        width: 40.71%;
         height: 262px;
     }
     }

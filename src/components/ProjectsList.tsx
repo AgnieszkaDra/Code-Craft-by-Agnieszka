@@ -8,12 +8,13 @@ import List from '../ui/List';
 const ProjectsList = (): JSX.Element => {
   const projects: Data['projects'] = data.projects;
   const root: ProjectItem = projects[0];
-  const projectsIds = root.childIds;
+  const projectsIds = root?.childIds ?? [];
 
   const items = projectsIds?.map((id) => {
     const projectItem = projects[id];
     return projectItem.url ? (
       <NavigationLink
+        key={id}
         to={projectItem.url}
         value={projectItem.label || 'Untitled'}
         className="projects__link"
@@ -23,8 +24,7 @@ const ProjectsList = (): JSX.Element => {
 
   return (
     <>
-   
-    <List items={items} className="projects-list" label='projekty'/>
+      <List items={items} className="projects-list" label='projekty'/>
     </>
     )
 };

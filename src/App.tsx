@@ -1,21 +1,33 @@
-import { Header, Panel } from './components';
-import { Main } from './components';
+import { Header } from './components';
+import { ProjectsList, ProjectsMain, Panel, About, Contact } from './components';
 import '../src/styles/index.scss';
-import ProjectsList from './components/ProjectsList';
-import ProjectsMain from './components/ProjectsMain';
-import { Outlet } from 'react-router-dom';
 
 function App() {
- 
   return (
     <div className="container">
       <Header />
-      <Main>
-        <ProjectsList />
-        <ProjectsMain />
-        <Panel className="main__panel" />
-        <Outlet />
-      </Main>
+    
+      <main>
+        <section id="projects-list">
+          <ProjectsList />
+        </section>
+
+        <section id="projects-main">
+          <ProjectsMain />
+        </section>
+
+        <section id="panel">
+          <Panel className="main__panel" />
+        </section>
+
+        <section id="O-mnie">
+          <About />
+        </section>
+
+        <section id="Kontakt">
+          <Contact />
+        </section>
+      </main>
     </div>
   );
 }

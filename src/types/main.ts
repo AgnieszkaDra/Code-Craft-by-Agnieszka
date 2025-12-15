@@ -1,5 +1,5 @@
 export interface ProjectItem {
-  id: number;
+  id?: number; 
   background?: string;
   images?: string[];
   label?: string;

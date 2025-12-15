@@ -1,7 +1,7 @@
-import type { MenuData } from './navbar';
-import type { ProjectsData } from './main';
+import type { MenuData as NavbarData } from './navbar';
+import type { ProjectsData as MainData} from './main';
 
 export type Data = {
-  menu: MenuData['menu'];
-  projects: ProjectsData['projects'];
-};
+  menu: NavbarData['menu'];
+  projects: MainData['projects'];
+}
