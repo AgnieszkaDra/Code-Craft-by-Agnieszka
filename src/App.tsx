@@ -1,12 +1,13 @@
 import { Header } from './components';
 import { ProjectsList, ProjectsMain, Panel, About, Contact } from './components';
 import '../src/styles/index.scss';
+import Hero from './components/hero/Hero';
 
 function App() {
   return (
     <div className="container">
       <Header />
-    
+      <Hero />
       <main>
         <section id="projects-list">
           <ProjectsList />

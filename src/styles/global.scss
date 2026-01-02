@@ -1,4 +1,5 @@
-@use './abstracts/index' as *;
+@use "sass:map";
+@use './abstracts/index' as ui;
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
 // ==============================
@@ -31,22 +32,22 @@ body {
   font-family: var(--font-base);
   font-weight: 400;
   line-height: 1.7;
-  background-color: $color-background-dark;
-  color: $white;
+  background-color: ui.$color-background-dark;
+  color: ui.$white;
   overflow-x: hidden;
-  padding: map-get($padding, large);
+  padding: map-get(ui.$padding, large);
 }
 
-@media (min-width: $viewport-md) {
+@media (min-width: ui.$viewport-md) {
   body {
     padding-block: 1.5rem;
     padding-inline: clamp(1.5rem, 5vw, 4.875rem);
   }
 }
 
-@media (min-width: $viewport-lg) {
+@media (min-width: ui.$viewport-lg) {
   body {
-    padding-block: $spacing-300;
+    padding-block: ui.$spacing-300;
     padding-inline: clamp(4.875rem, 6vw, 10.125rem);
   }
 }
@@ -58,7 +59,7 @@ li {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: $white;
+  color: ui.$white;
 }
 
 img {
@@ -79,10 +80,20 @@ button {
 .container {
   padding: 0 2rem;
   margin: auto;
-  @include respond(md, lg, xl) {
+  @media (min-width: ui.$viewport-md) {
     padding: 0;
   }
   width: 100%;
   max-width: 1168px;
   //margin-top: 6.5rem;
+}
+
+.flex-standard {
+  display: flex;
+  flex-direction: column;
+   @media (min-width: ui.$viewport-md) {
+    flex-direction: row;
+  }
+  align-items: center;
+  justify-content: center;
 }

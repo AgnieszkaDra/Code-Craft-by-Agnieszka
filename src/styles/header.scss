@@ -1,16 +1,18 @@
-@use './abstracts/index' as *;
+//@use './abstracts/index' as *;
+@use "sass:map";
+@use './abstracts/index' as ui;
 
 .header {
   position: relative;
   width: 100%;
   margin: auto;
   padding: 2rem 0;
-  @include flexAbsoluteCenter;
+  @include ui.flexAbsoluteCenter;
 
-  @include respond(md, lg, xl) {
+  @media (min-width: ui.$viewport-md) {
     padding: 4rem 0;
   }
-
+  
   &__mobile {
     display: flex;
     align-items: center;
@@ -20,13 +22,13 @@
     top: 0;
     width: 100%;
     z-index: 2000;
-    padding: map-get($padding, medium);
-    background-color: $color-background-dark;
+    padding: map-get(ui.$padding, medium);
+    background-color: ui.$color-background-dark;
     box-sizing: border-box;
 
-    @include respond(md, lg, xl) {
+    @media (min-width: ui.$viewport-md) {
       display: none;
-    }
+      }
   }
 
   &::after {
@@ -36,18 +38,65 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: rgba($grey, 0.3);
+    background-color: rgba(ui.$grey, 0.3);
   }
+
+  &-hero {
+    gap: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 80vh;
+
+  &__content,
+  &__media {
+    flex: 0 0 42%;
+    height: 80vh;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    & > * {
+      text-align: start;
+    }
+  }
+
+  &__media {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 80vh;
+  }
+
+  &__image-wrapper {
+    height: calc(80vh * 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: auto;  
+    object-fit: cover; 
+    border-radius: 8px; 
+  }
+
+}
 }
 
 .burger-menu {
-  @include flexAbsoluteCenter;
+  @include ui.flexAbsoluteCenter;
   border: none;
   cursor: pointer;
   padding: 8px;
   background-color: transparent;
   svg {
-   color: $white;
+   color: ui.$white;
   }
 }
 
@@ -58,7 +107,7 @@
   height: 100%;
   width: 100%;
   transform: translateX(100%);
-  background-color: $color-background-dark;
+  background-color: ui.$color-background-dark;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,7 +118,7 @@
     justify-content: center;
 }
 
-  @include respond(md, lg, xl) {
+  @media (min-width: ui.$viewport-md) {
     position: relative;
     transform: none;
   }
@@ -77,19 +126,19 @@
   &__logo {
     display: none;
     font-weight: 700;
-    font-size: map-get($font-size, extra-large);
+    font-size: map-get(ui.$font-size, extra-large);
     line-height: 100%;
     letter-spacing: -0.29px;
 
-    @include respond(md, lg, xl) {
+    @media (min-width: ui.$viewport-md) {
       display: block;
     }
 
     &--note {
-      font-size: map-get($font-size, normal);
+      font-size: map-get(ui.$font-size, normal);
       letter-spacing: 5px;
       font-style: italic;
-      font-weight: map-get($font-weight, large);
+      font-weight: map-get(ui.$font-weight, large);
       margin-left: 1rem;
     }
   }
@@ -102,9 +151,9 @@
   align-items: center;
   height: 100vh;
   padding-top: 10rem;
-  color: $white;
+  color: ui.$white;
 
-  @include respond(md, lg, xl) {
+  @media (min-width: ui.$viewport-md) {
     margin-left: auto;
     flex-direction: row;
     height: auto;
@@ -112,36 +161,36 @@
   }
 
   & > * {
-    @include flexAbsoluteCenter();
+    @include ui.flexAbsoluteCenter();
   }
 
   &__item {
     position: relative;
-    padding: map-get($padding, large);
+    padding: map-get(ui.$padding, large);
 
-    @include respond(md, lg, xl) {
+    @media (min-width: ui.$viewport-md) {
       padding: 10px;
     }
 
   }
 
   &__title {
-    color: $white;
+    color: ui.$white;
   }
 
   .menu__link {
-  all: unset; // usuwa wszystkie domyślne style buttona
-  cursor: pointer;
-  line-height: 26px;
-  color: $white;
-  font-weight: 500;
-  background-color: transparent;
-  transition: opacity 0.3s, color 0.3s;
+    all: unset;
+    cursor: pointer;
+    line-height: 26px;
+    color: ui.$white;
+    font-weight: 500;
+    background-color: transparent;
+    transition: opacity 0.3s, color 0.3s;
 
-  &:hover,
-  &:focus {
-    opacity: 0.7; 
-    outline: none;
+    &:hover,
+    &:focus {
+      opacity: 0.7; 
+      outline: none;
+    }
   }
-}
 }
