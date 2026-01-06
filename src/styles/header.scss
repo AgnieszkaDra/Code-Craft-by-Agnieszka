@@ -46,30 +46,22 @@
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    height: 80vh;
-
+    
   &__content,
   &__media {
     flex: 0 0 42%;
-    height: 80vh;
+    
   }
 
   &__content {
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
     gap: 1.5rem;
+    margin-top: auto;
     
     & > * {
       text-align: start;
     }
-  }
-
-  &__media {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 80vh;
   }
 
   &__image-wrapper {
@@ -116,10 +108,6 @@
 
         svg {
           color: ui.$color-background-dark;
-        }
-
-        &:hover {
-          background-color: darken(#0a66c2, 6%);
         }
       }
     }

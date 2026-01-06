@@ -3,7 +3,7 @@ import heroImage from "../../assets/images/hero.jpg";
 
 const Hero: React.FC = () => {
   return (
-    <header className="header-hero flex-standard">
+    <header className="header-hero flex-standard section">
       <div className="header-hero__media">
         <div className="header-hero__image-wrapper">
           <img
