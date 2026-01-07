@@ -8,13 +8,17 @@ interface MainProps {
 export const Main = ({ children }: MainProps) => {
   return (
     <main className="main">
-      <section id="projects-list">
+      <section className="projects section">
+   
         <ProjectsList />
-      </section>
-
-      <section id="projects-main">
         <ProjectsMain />
       </section>
+
+
+      
+
+      
+
 
       <section id="panel">
         <Panel className="main__panel" />

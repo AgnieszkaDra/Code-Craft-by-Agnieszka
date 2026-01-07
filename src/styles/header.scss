@@ -49,8 +49,7 @@
     
   &__content,
   &__media {
-    flex: 0 0 42%;
-    
+    flex: 1 1 42%;
   }
 
   &__content {
@@ -72,7 +71,6 @@
   }
 
   &__image {
-    width: auto;  
     object-fit: cover; 
     border-radius: 8px; 
   }

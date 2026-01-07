@@ -9,13 +9,11 @@ function App() {
       <Header />
       <Hero />
       <main>
-        <section id="projects-list">
-          <ProjectsList />
-        </section>
-
-        <section id="projects-main">
-          <ProjectsMain />
-        </section>
+         <section className="projects section">
+   
+        <ProjectsList />
+        <ProjectsMain />
+      </section>
 
         <section id="panel">
           <Panel className="main__panel" />

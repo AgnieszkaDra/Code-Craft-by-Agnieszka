@@ -24,9 +24,9 @@ const ProjectsList = (): JSX.Element => {
 
   return (
     <>
-      <List items={items} className="projects-list" label='projekty'/>
+     <List items={items} className="projects-list text" label='projekty'/>
     </>
-    )
+  )
 };
 
 export default ProjectsList;

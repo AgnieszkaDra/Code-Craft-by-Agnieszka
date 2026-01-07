@@ -7,7 +7,7 @@ const projectList: ProjectItem[] = [
   {
     label: 'Shop TS',
     background: shopTsImage,
-    images: [shopTsImage, shopTsPart1, shopTsPart2],
+    images: [shopTsImage, shopTsPart1, shopTsPart2, shopTsPart1, shopTsPart2],
     url: 'https://github.com/AgnieszkaDra/shop-TS',
     description:
       'This project is an e-commerce web application built using TypeScript, json-server, and Vite. The application features a client-side interface for users to browse products, manage a shopping cart, and place orders.',
@@ -15,6 +15,7 @@ const projectList: ProjectItem[] = [
   {
     label: 'Hall Reservation',
     url: 'https://github.com/AgnieszkaDra/Hall-Reservation',
+    images: [shopTsImage],
     description:
       'This project is a Hall Reservation System being developed in pure TypeScript, following Object-Oriented Programming (OOP) principles. The goal is to create a structured, maintainable, and scalable application for managing hall reservations efficiently.',
   },

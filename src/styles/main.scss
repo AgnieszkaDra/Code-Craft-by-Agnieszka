@@ -1,4 +1,5 @@
-@use './abstracts/index' as *;
+@use "sass:map";
+@use './abstracts/index' as ui;
 
 .main {
     width: 100%;
@@ -6,7 +7,7 @@
     flex-direction: column;
     margin-top: 52px;
     min-height: 100vh;
-    @include respond(lg, xl) {
+    @media (min-width: ui.$viewport-lg) {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
@@ -28,8 +29,17 @@
 }
 
 .projects {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: ui.$viewport-md) {
+    flex-direction: row;
+    & > * {
+      flex: 1 1 42%;
+    }
+    
+  }
     &-list {
-      width: 100%;
+  
         & > * {
             text-align: start;
         }
@@ -41,21 +51,25 @@
         }
     }
 
-    &-carousel {
-        width: 40.71%;
-        height: 262px;
-    }
+    
     }
     &-main {
-       width: 40.71%; 
+       display: flex;
+       flex: 1 1 50%;
     }
     &-carousel {
+      
         height: 267px;
-        background-color: $white;
+        background-color: ui.$white;
         border-radius: 10px;
-        color: $heading;
+        color: ui.$heading;
+     
         &__item {
-            padding: 10%;
+      
+        
+           display: flex;
+       flex: 1 1 50%;
+  
         }
     }
 }
@@ -63,7 +77,10 @@
 
 
 .carousel {
-   
+   &__content {
+     display: flex;
+       flex: 1 1 50%;
+   }
     
     &__images {
         display: grid;
@@ -80,29 +97,29 @@
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s;
-    border: 2px solid $white;
+    border: 2px solid ui.$white;
 
     &--turcoise {
-      border-color: $color-action-turcoise;
+      border-color: ui.$color-action-turcoise;
 
       &.dot--active {
-        background-color: $color-action-turcoise;
+        background-color: ui.$color-action-turcoise;
       }
     }
 
     &--navy {
-      border-color: $color-action-navy;
+      border-color: ui.$color-action-navy;
 
       &.dot--active {
-        background-color: $color-action-navy;
+        background-color: ui.$color-action-navy;
       }
     }
 
     &--coral {
-      border-color: $color-action-coral;
+      border-color: ui.$color-action-coral;
 
       &.dot--active {
-        background-color: $color-action-coral;
+        background-color: ui.$color-action-coral;
       }
     }
 

@@ -13,7 +13,7 @@ const List = ({ items, className = '', label }: ListProps) => {
     <ul className={`list ${className}`}>
       {label && <p className="text text-label">{label}</p>}
       {items.map((item, index) => (
-        <li key={index} className={`list__item ${className}__item text text-article`}>
+        <li key={index} className={`list__item ${className}`}>
           {item}
         </li>
       ))}
