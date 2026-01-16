@@ -5,28 +5,59 @@ import type { Data } from '../types/data';
 import type { JSX } from 'react';
 import List from '../ui/List';
 
+// const ProjectsList = (): JSX.Element => {
+//   const projects: Data['projects'] = data.projects;
+//   const root: ProjectItem = projects[0];
+//   const projectsIds = root?.childIds ?? [];
+
+//   const items = projectsIds?.map((id) => {
+//     const projectItem = projects[id];
+//     return projectItem.url ? (
+//       <NavigationLink
+//         key={id}
+//         to={projectItem.url}
+//         value={projectItem.label || 'Untitled'}
+//         className="projects__link"
+//       />
+//     ) : null;
+//   }) ?? [];
+
+//   return (
+//     <>
+//      <List items={items} className="projects-list text" label='projekty'/>
+//     </>
+//   )
+// };
+
+// export default ProjectsList;
+
+
 const ProjectsList = (): JSX.Element => {
   const projects: Data['projects'] = data.projects;
   const root: ProjectItem = projects[0];
   const projectsIds = root?.childIds ?? [];
 
-  const items = projectsIds?.map((id) => {
-    const projectItem = projects[id];
-    return projectItem.url ? (
-      <NavigationLink
-        key={id}
-        to={projectItem.url}
-        value={projectItem.label || 'Untitled'}
-        className="projects__link"
-      />
-    ) : null;
-  }) ?? [];
+  const items = projectsIds
+    ?.map((id) => {
+      const projectItem = projects[id];
+      return projectItem.url ? (
+        <NavigationLink
+          key={id}
+          to={projectItem.url}
+          value={projectItem.label || 'Untitled'}
+          className="projects-list__link"
+        />
+      ) : null;
+    })
+    .filter(Boolean);
 
   return (
-    <>
-     <List items={items} className="projects-list text" label='projekty'/>
-    </>
-  )
+    <List
+      items={items}
+      block="projects-list"
+      label="projekty"
+    />
+  );
 };
 
 export default ProjectsList;

@@ -29,57 +29,82 @@
 }
 
 .projects {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr ;
+  gap: 2rem;
+  @media (min-width: ui.$viewport-md) {
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+  }
   @media (min-width: ui.$viewport-md) {
     flex-direction: row;
     & > * {
       flex: 1 1 42%;
     }
-    
   }
     &-list {
-  
-        & > * {
-            text-align: start;
-        }
-        &__item {
-       
-        text-align: left;
-        &:first-of-type {
-            margin-top: 25px;
-        }
-    }
-
+   display: flex; 
+   flex-direction: column; 
+      // li next to each other
+ 
+  gap: 1rem;
+&__list {
+  display: flex;
+  flex-wrap: wrap;
+    gap: 1rem;
+    @media (min-width: ui.$viewport-md) {
+      display: inline;
     
-    }
-    &-main {
+  }
+  &__item {
        display: flex;
-       flex: 1 1 50%;
+        text-align: left;
+  }
+}
+      
+      & > * {
+        text-align: start;
+      }
+      &__item {
+        display: flex;
+        text-align: left;
+        
+        &:first-of-type {
+          @media (min-width: ui.$viewport-md) {
+    margin-top: 15px;
+    
+  }
+          
+        }
+      }
     }
     &-carousel {
-      
-        height: 267px;
-        background-color: ui.$white;
-        border-radius: 10px;
-        color: ui.$heading;
-     
-        &__item {
-      
-        
-           display: flex;
-       flex: 1 1 50%;
-  
+      background-color: ui.$white;
+      border-radius: 10px;
+      color: ui.$heading;
+      &__item {
+        display: flex;
+        flex-direction: column;
+        display: grid;
+            grid-template-columns: 1fr 3fr;
+        @media (min-width: ui.$viewport-md) {
+          flex-direction: row;
         }
-    }
-}
-
+       
+          }
+          
+    
+    
+        }
+  
+  }
 
 
 .carousel {
    &__content {
-     display: flex;
-       flex: 1 1 50%;
+    display: flex;
+    flex: 1 1 50%;
+    padding: map.get(ui.$padding, medium);
    }
     
     &__images {

@@ -31,15 +31,15 @@ const renderProjectItem = (
   _index: number,
   paginator: PaginatorContext
 ): ReactElement => (
-  <div className="projects-carousel__item" key={project.id}>
+  <>
+   <div className="projects-carousel__item" key={project.id}>
     <div className="projects-carousel__content">
       <h5 className="h5-lead lead carousel__title">
         {project.label}
       </h5>
-
-      <p className="text text-description carousel__description">
+      {/* <p className="text text-description carousel__description">
         {project.description}
-      </p>
+      </p> */}
 
       {project.url && (
         <a
@@ -53,12 +53,8 @@ const renderProjectItem = (
       )}
     </div>
 
-    <div className="projects-carousel__footer">
-      {new DotsPaginator('md', 'navy').render(paginator)}
-    </div>
-
     {project.images &&
-         project.images?.length > 0 && (
+      project.images?.length > 0 && (
       <div className="project-images-carousel">
         <Carousel
           className="images-carousel"
@@ -67,7 +63,15 @@ const renderProjectItem = (
         />
       </div>
     )}
+
+
+
   </div>
+    <div className="projects-carousel__footer">
+      {new DotsPaginator('md', 'navy').render(paginator)}
+    </div>
+  </>
+ 
 );
 
 const ProjectsMain = ({
@@ -81,13 +85,13 @@ const ProjectsMain = ({
   );
 
   return (
-    <div className="projects-main">
+ 
       <Carousel
         className={`projects-carousel ${className}`}
         items={projects}
         renderItem={renderProjectItem}
       />
-    </div>
+ 
   );
 };
 
