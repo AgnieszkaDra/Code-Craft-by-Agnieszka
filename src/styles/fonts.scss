@@ -102,6 +102,11 @@ $typography: (
   }
 }
 
+.font-large {
+  font-size: inherit;  
+  font-weight: 700;     
+}
+
 .buttons {
   &.middle {
     font-size: 18px;

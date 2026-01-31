@@ -37,8 +37,6 @@ $viewport-max: 1440px;
   );
 }
 
-
-
 $container-padding: clamp(1rem, 9vw, 4rem);
 
 $padding: (
@@ -72,3 +70,6 @@ $spacing-500: 2.5rem;
   @include fluid-font-size($min, $max);
 }
 
+.font-large {
+  font-weight: 00;
+}

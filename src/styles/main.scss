@@ -8,10 +8,10 @@
     margin-top: 52px;
     min-height: 100vh;
     @media (min-width: ui.$viewport-lg) {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: flex-start;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: flex-start;
     }
 }
 
@@ -26,6 +26,17 @@
         margin: 3rem 0;
     }
    
+}
+
+.navigate-gitHub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content {
+      padding: map-get(ui.$spacing, small) 0;
+      width: 100%;
+      background-color: black;
+    }
 }
 
 // .projects {
@@ -256,7 +267,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        border: 5px solid ui.$color-background-dark;
+        border: 5px solid black;
         box-sizing: border-box;
         pointer-events: none;
       }
@@ -298,6 +309,18 @@
     font-size: 0.875rem;
     color: ui.$heading;
     text-decoration: underline;
+  }
+
+  &__navigate {
+    margin-left: auto;
+    margin-right: 12px;
+    &-link {
+      color: ui.$color-background-dark;
+      text-decoration: none;
+      text-transform: uppercase; 
+      font-weight: 600;
+      letter-spacing: .2em;
+    }
   }
 }
 

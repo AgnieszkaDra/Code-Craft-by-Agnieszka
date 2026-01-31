@@ -1,6 +1,8 @@
 import type { ReactElement } from 'react';
 import { data } from '../data/data';
 import type { ProjectItem } from '../types/main';
+import { Link } from 'react-router-dom';
+import { BaseLink } from '../ui';
 
 interface ProjectsMainProps {
   className?: string;
@@ -36,20 +38,24 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
             <h5 className="h5-lead lead projects__title">
               {project.label}
             </h5>
-
-            {project.url && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
+            {project.link && (
+              <BaseLink
+                href={project.link.href}
+                external={project.link.external}
                 className="projects__link"
               >
-                View Project
-              </a>
-            )}
-          </footer>
+                {project.link.label}
+              </BaseLink>
+)}        </footer>
         </article>
       ))}
+      <footer className="projects__navigate">
+        <p>
+          <Link to="/projects" className="projects__navigate-link">
+            Zobacz wszystkie projekty
+          </Link>
+        </p>
+      </footer>
     </section>
   );
 };
