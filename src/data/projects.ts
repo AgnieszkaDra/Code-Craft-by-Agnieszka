@@ -1,6 +1,6 @@
 import type { ProjectsData, ProjectItem } from '../types/main';
-import shopTsImage from '../assets/images/shop-ts.jpeg';
-import shopTsPart1 from '../assets/images/shop-ts-part1.jpeg';
+import shopTsImage from '../assets/images/logo/logo-dziecko.jpg';
+import shopTsPart1 from '../assets/images/logo/logo-mama.jpg';
 import shopTsPart2 from '../assets/images/shop-ts-part2.jpeg';
 
 const projectList: ProjectItem[] = [
@@ -14,8 +14,17 @@ const projectList: ProjectItem[] = [
   },
   {
     label: 'Hall Reservation',
-    url: 'https://github.com/AgnieszkaDra/Hall-Reservation',
+    background: shopTsPart1,
     images: [shopTsImage],
+    url: 'https://github.com/AgnieszkaDra/Hall-Reservation',
+    description:
+      'This project is a Hall Reservation System being developed in pure TypeScript, following Object-Oriented Programming (OOP) principles. The goal is to create a structured, maintainable, and scalable application for managing hall reservations efficiently.',
+  },
+   {
+    label: 'Hall Reservation',
+    background: shopTsPart1,
+    images: [shopTsImage],
+    url: 'https://github.com/AgnieszkaDra/Hall-Reservation',
     description:
       'This project is a Hall Reservation System being developed in pure TypeScript, following Object-Oriented Programming (OOP) principles. The goal is to create a structured, maintainable, and scalable application for managing hall reservations efficiently.',
   },

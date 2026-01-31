@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectsList, ProjectsMain, Panel, About, Contact } from '../components';
+import { ProjectsMain, Panel, About, Contact } from '../components';
 
 interface MainProps {
   children?: React.ReactNode;
@@ -10,7 +10,7 @@ export const Main = ({ children }: MainProps) => {
     <main className="main">
       <section className="projects section">
    
-        <ProjectsList />
+       
         <ProjectsMain />
       </section>
 

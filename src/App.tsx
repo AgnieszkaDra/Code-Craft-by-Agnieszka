@@ -1,5 +1,5 @@
 import { Header } from './components';
-import { ProjectsList, ProjectsMain, Panel, About, Contact } from './components';
+import { ProjectsMain, Panel, About, Contact } from './components';
 import '../src/styles/index.scss';
 import Hero from './components/hero/Hero';
 
@@ -8,12 +8,13 @@ function App() {
     <div className="container">
       <Header />
       <Hero />
-      <main>
-         <section className="projects section">
+      <main className='section'>
+  
+  
+        <section id="projects" className="section projects">
+          <ProjectsMain className="projects__list" />
+        </section>
    
-        <ProjectsList />
-        <ProjectsMain />
-      </section>
 
         <section id="panel">
           <Panel className="main__panel" />
