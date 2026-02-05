@@ -51,7 +51,7 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
       ))}
       <footer className="projects__navigate">
         <p>
-          <Link to="/projects" className="projects__navigate-link">
+          <Link to="/projects" className="projects__navigate-link text-label">
             Zobacz wszystkie projekty
           </Link>
         </p>

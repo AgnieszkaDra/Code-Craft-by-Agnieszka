@@ -19,7 +19,7 @@
   
    width: 29.5%;
     &__description {
-         width: auto;
+        width: auto;
         // @include respond(md, lg, xl) {
         //     width: 85%;
         // } 
@@ -315,11 +315,19 @@
     margin-left: auto;
     margin-right: 12px;
     &-link {
-      color: ui.$color-background-dark;
+      color: ui.$contrast-strong;
       text-decoration: none;
-      text-transform: uppercase; 
-      font-weight: 600;
-      letter-spacing: .2em;
+    }
+  }
+
+  &-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: auto;
+    &__label {
+      color: ui.$contrast-strong;
     }
   }
 }
@@ -371,11 +379,8 @@
         background-color: ui.$color-action-coral;
       }
     }
-
-    
   }
 }
-
 
 $dot-sizes: (
   sm: 6px,

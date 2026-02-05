@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Hero from './components/hero/Hero';
 import '../src/styles/index.scss';
 import { BaseLink } from './ui';
+import ProjectsInfo from './components/ProjectsInfo';
 
 function App() {
   return (
@@ -59,7 +60,8 @@ function App() {
         <Route
           path="/projects"
           element={
-            <main className="section">
+            <main className="projects-page section">
+              <ProjectsInfo className="section" />
               <ProjectsMain className="projects__list section" />
             </main>
           }

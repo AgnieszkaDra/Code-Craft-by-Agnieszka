@@ -11,3 +11,8 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin upper-heading-text {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
