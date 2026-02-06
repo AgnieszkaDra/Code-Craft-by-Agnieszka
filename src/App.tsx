@@ -3,39 +3,21 @@ import { ProjectsMain, Panel, About, Contact } from './components';
 import { Routes, Route } from 'react-router-dom';
 import Hero from './components/hero/Hero';
 import '../src/styles/index.scss';
-import { BaseLink } from './ui';
 import ProjectsInfo from './components/ProjectsInfo';
+import GitHubNotice from './components/GithubNotice';
 
 function App() {
   return (
     <div className="container">
       <Header />
-
       <Routes>
-        
         <Route
           path="/"
           element={
             <>
               <Hero />
               <main>
-                <section className='navigate-gitHub section'>
-                  <div className='navigate-gitHub__content'>
-                    <p className="text-description">
-                      <span className='font-large'>Szukasz projektu portfolio? &nbsp;</span>
-                      Kod źródłowy tej strony jest dostępny jako open source.
-                      &nbsp;
-                      <BaseLink
-                        href="https://github.com/AgnieszkaDra/Code-Craft-by-Agnieszka"
-                        external={true}
-                        className="link--external link--github"
-                        ariaLabel="Zobacz na GitHub"
-                      >
-                        Zobacz na GitHub
-                      </BaseLink>
-                    </p>
-                  </div>
-                </section>
+                <GitHubNotice className="section" />
                 <section id="projects" className="section projects">
                   <ProjectsMain className="projects__list" />
                 </section>
@@ -55,8 +37,6 @@ function App() {
             </>
           }
         />
-
-        {/* Subpage Projects */}
         <Route
           path="/projects"
           element={
@@ -66,8 +46,6 @@ function App() {
             </main>
           }
         />
-
-        {/* Tu możesz dodać inne subpage, np. /about itp */}
       </Routes>
     </div>
   );

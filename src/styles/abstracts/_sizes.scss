@@ -11,20 +11,6 @@ $font-size: (
   extra-large: 4.2rem
 );
 
-$viewport-min: 320px;
-$viewport-max: 1440px;
-
-
-
-
-// @mixin fluid-font-size($min-size, $max-size) {
-//   font-size: clamp(
-//     #{$min-size},
-//     calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$viewport-min}) / (#{$viewport-max} - #{$viewport-min}))),
-//     #{$max-size}
-//   );
-// }
-
 @mixin fluid-font-size($min, $max) {
   $min-value: math.div(strip-unit($min), 1);
   $max-value: math.div(strip-unit($max), 1);
@@ -70,6 +56,4 @@ $spacing-500: 2.5rem;
   @include fluid-font-size($min, $max);
 }
 
-.font-large {
-  font-weight: 00;
-}
+

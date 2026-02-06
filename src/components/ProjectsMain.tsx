@@ -35,9 +35,9 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
           )}
 
           <footer className="projects__footer">
-            <h5 className="h5-lead lead projects__title">
+            <h4 className="h4-subtitle projects__title">
               {project.label}
-            </h5>
+            </h4>
             {project.link && (
               <BaseLink
                 href={project.link.href}
@@ -46,7 +46,8 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
               >
                 {project.link.label}
               </BaseLink>
-)}        </footer>
+            )}        
+          </footer>
         </article>
       ))}
       <footer className="projects__navigate">
