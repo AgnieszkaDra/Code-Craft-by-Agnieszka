@@ -13,10 +13,10 @@ const ProjectsList = (): JSX.Element => {
   const items = projectsIds
     ?.map((id) => {
       const projectItem = projects[id];
-      return projectItem.url ? (
+      return projectItem.link?.href ? (
         <NavigationLink
           key={id}
-          to={projectItem.url}
+          to={projectItem.link.href}
           value={projectItem.label || 'Untitled'}
           className="projects-list__link"
         />
