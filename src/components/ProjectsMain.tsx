@@ -1,25 +1,23 @@
-import type { ReactElement } from 'react';
-import { data } from '../data/data';
-import type { ProjectItem } from '../types/main';
-import { Link } from 'react-router-dom';
-import { BaseLink } from '../ui';
+import type { ReactElement } from 'react'
+import { data } from '../data/data'
+import type { ProjectItem } from '../types/main'
+import { Link } from 'react-router-dom'
+import { BaseLink } from '../ui'
 
 interface ProjectsMainProps {
-  className?: string;
+  className?: string
 }
 
 const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
-  const projectsData = data.projects;
-  const root = projectsData[0];
-  const projectIds = root.childIds ?? [];
+  const { projects, order } = data.projects
 
-  const projects: ProjectItem[] = projectIds.map(
-    (id) => projectsData[id]
-  );
+  const visibleProjects: ProjectItem[] = order.map(
+    (id) => projects[id]
+  )
 
   return (
     <section className={`projects ${className ?? ''}`}>
-      {projects.map((project, index) => (
+      {visibleProjects.map((project, index) => (
         <article
           key={project.id}
           className={`projects__item projects__item--${index + 1}`}
@@ -38,6 +36,7 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
             <h4 className="h4-subtitle projects__title">
               {project.label}
             </h4>
+
             {project.link && (
               <BaseLink
                 href={project.link.href}
@@ -46,10 +45,11 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
               >
                 {project.link.label}
               </BaseLink>
-            )}        
+            )}
           </footer>
         </article>
       ))}
+
       <footer className="projects__navigate">
         <p>
           <Link to="/projects" className="projects__navigate-link text-label">
@@ -58,7 +58,7 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
         </p>
       </footer>
     </section>
-  );
-};
+  )
+}
 
-export default ProjectsMain;
+export default ProjectsMain

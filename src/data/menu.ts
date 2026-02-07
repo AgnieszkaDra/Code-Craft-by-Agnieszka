@@ -1,23 +1,23 @@
-import type { MenuItem } from "../types/navbar";
+import type { MenuData, MenuItem } from '../types/navbar'
 
-const menuItems: Omit<MenuItem, 'id' | 'childIds'>[] = [
-  { label: 'Strona główna', path: 'Strona-glowna' },
-  { label: 'O mnie', path: 'O-mnie' },
-  { label: 'Projekty', path: 'Projekty' },
-  { label: 'Kontakt', path: 'Kontakt' },
-];
+const items: Record<number, MenuItem> = {
+  1: { id: 1, label: 'Strona główna', path: 'Strona-glowna' },
+  2: { id: 2, label: 'O mnie', path: 'O-mnie' },
+  3: { id: 3, label: 'Projekty', path: 'Projekty' },
+  4: { id: 4, label: 'Kontakt', path: 'Kontakt' },
+}
 
-const menu: Record<number, MenuItem> = menuItems.reduce((acc, item, index) => {
-  acc[index + 1] = { id: index + 1, ...item };
-  return acc;
-}, {} as Record<number, MenuItem>);
-
-menu[0] = {
+// Root node
+const root: MenuItem = {
   id: 0,
   name: '(Root)',
   label: 'Menu',
-  childIds: Object.keys(menu)
-    .map(Number)
-    .filter((k) => k !== 0),
-};
-export default menu;
+  childIds: Object.keys(items).map(Number),
+}
+
+export const menu: MenuData = {
+  menu: items,
+  menuItem: root,
+}
+
+export default menu
