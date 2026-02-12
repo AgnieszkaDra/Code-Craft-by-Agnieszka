@@ -4,11 +4,17 @@ import type { ProjectItem } from '../types/main'
 import { Link } from 'react-router-dom'
 import { BaseLink } from '../ui'
 
-interface ProjectsMainProps {
+interface ProjectsHeroProps {
+  id?: string
   className?: string
+  blockName: string
 }
 
-const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
+const ProjectsHero = ({
+  id,
+  className,
+  blockName,
+}: ProjectsHeroProps): ReactElement => {
   const { projects, order } = data.projects
 
   const visibleProjects: ProjectItem[] = order.map(
@@ -16,24 +22,27 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
   )
 
   return (
-    <section className={`projects ${className ?? ''}`}>
+    <section
+      id={id}
+      className={[blockName, className].filter(Boolean).join(' ')}
+    >
       {visibleProjects.map((project, index) => (
         <article
           key={project.id}
-          className={`projects__item projects__item--${index + 1}`}
+          className={`${blockName}__item ${blockName}__item--${index + 1}`}
         >
           {project.background && (
-            <div className="projects__background">
+            <div className={`${blockName}__background`}>
               <img
                 src={project.background}
                 alt={`Background for ${project.label}`}
-                className="projects__background-image"
+                className={`${blockName}__background-image`}
               />
             </div>
           )}
 
-          <footer className="projects__footer">
-            <h4 className="h4-subtitle projects__title">
+          <footer className={`${blockName}__footer`}>
+            <h4 className={`h4-subtitle ${blockName}__title`}>
               {project.label}
             </h4>
 
@@ -41,7 +50,7 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
               <BaseLink
                 href={project.link.href}
                 external={project.link.external}
-                className="projects__link"
+                className={`${blockName}__link`}
               >
                 {project.link.label}
               </BaseLink>
@@ -50,9 +59,12 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
         </article>
       ))}
 
-      <footer className="projects__navigate">
+      <footer className={`${blockName}__navigate`}>
         <p>
-          <Link to="/projects" className="projects__navigate-link text-label">
+          <Link
+            to="/projects"
+            className={`${blockName}__navigate-link text-label`}
+          >
             Zobacz wszystkie projekty
           </Link>
         </p>
@@ -61,4 +73,4 @@ const ProjectsMain = ({ className }: ProjectsMainProps): ReactElement => {
   )
 }
 
-export default ProjectsMain
+export default ProjectsHero

@@ -1,5 +1,5 @@
 import { Header } from './components';
-import { ProjectsMain, Panel, About, Contact } from './components';
+import { ProjectsHero, Panel, About, Contact } from './components';
 import { Routes, Route } from 'react-router-dom';
 import Hero from './components/hero/Hero';
 import '../src/styles/index.scss';
@@ -18,9 +18,12 @@ function App() {
               <Hero />
               <main>
                 <GitHubNotice className="section" />
-                <section id="projects" className="section projects">
-                  <ProjectsMain className="projects__list" />
-                </section>
+                <ProjectsHero
+                  id="projects"
+                  blockName="projects-hero"
+                  className="section"
+                />
+         
                 
                 <section id="panel">
                   <Panel className="main__panel" />
@@ -42,7 +45,7 @@ function App() {
           element={
             <main className="projects-page section">
               <ProjectsInfo className="section" />
-              <ProjectsMain className="projects__list section" />
+              
             </main>
           }
         />
