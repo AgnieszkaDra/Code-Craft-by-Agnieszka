@@ -6,7 +6,14 @@ import Logo from '../ui/Logo';
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  const toggleNavbar = () => {
+  // const toggleNavbar = () => {
+  //   setNavbarOpen(prev => {
+  //     document.body.style.overflow = !prev ? 'hidden' : '';
+  //     return !prev;
+  //   });
+  // };
+
+   const toggleNavbar = () => {
     setNavbarOpen((prev) => {
       const next = !prev;
       if (next) {
@@ -25,6 +32,7 @@ const Header = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
+      {/* MOBILE MENU */}
       <motion.div
         className="header__mobile"
         initial={{ x: -30, opacity: 0 }}
@@ -33,6 +41,8 @@ const Header = () => {
       >
         <Hamburger navbarOpen={navbarOpen} toggleNavbar={toggleNavbar} />
       </motion.div>
+
+      {/* NAV */}
       <motion.nav
         className={`${navbarOpen ? 'nav open' : 'nav'}`}
         initial={{ opacity: 0 }}

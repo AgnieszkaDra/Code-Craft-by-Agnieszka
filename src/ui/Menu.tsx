@@ -1,6 +1,6 @@
 import type { Data } from '../types/data';
+import menuData from '../data/menu';
 import type { JSX } from 'react';
-import data from '../data/data';
 
 type MenuItemProps = {
   id: number;
@@ -33,9 +33,9 @@ const MenuItemComponent = ({ id, menu }: MenuItemProps): JSX.Element | null => {
 };
 
 const Menu = (): JSX.Element => {
-  const menu: Data['menu'] = data.menu;
-  const root = menu[0];
-  const rootChildren = root?.childIds ?? [];
+  const menu: Data['menu'] = menuData.menu;
+  const root = menuData.menuItem;               
+  const rootChildren = root.childIds ?? []; 
 
   return (
     <ul className="menu" role="menu" tabIndex={-1} aria-label="Main menu">

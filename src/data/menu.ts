@@ -7,7 +7,6 @@ const items: Record<number, MenuItem> = {
   4: { id: 4, label: 'Kontakt', path: 'Kontakt' },
 }
 
-// Root node
 const root: MenuItem = {
   id: 0,
   name: '(Root)',
@@ -16,7 +15,7 @@ const root: MenuItem = {
 }
 
 export const menu: MenuData = {
-  menu: items,
+  menu: { ...items }, 
   menuItem: root,
 }
 

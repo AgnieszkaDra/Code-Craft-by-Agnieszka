@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react'
-import { data } from '../data/data'
-import type { ProjectItem } from '../types/main'
+import { data } from '../../data/data'
+import type { ProjectItem } from '../../types/main'
 import { Link } from 'react-router-dom'
-import { BaseLink } from '../ui'
+import { BaseLink } from '../../ui'
 
 interface ProjectsHeroProps {
   id?: string
@@ -15,10 +15,10 @@ const ProjectsHero = ({
   className,
   blockName,
 }: ProjectsHeroProps): ReactElement => {
-  const { projects, order } = data.projects
+  const { projectsList, order } = data.projects
 
   const visibleProjects: ProjectItem[] = order.map(
-    (id) => projects[id]
+    (id) => projectsList[id]
   )
 
   return (

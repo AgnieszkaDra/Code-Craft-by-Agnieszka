@@ -6,7 +6,7 @@ import shopTsPart2 from '../assets/images/shop-ts-part2.jpeg'
 export const projects: ProjectsData = {
   order: ['shop-ts', 'hall-reservation'],
 
-  projects: {
+  projectsList: {
     'shop-ts': {
       id: 'shop-ts',
       label: 'Shop TS',
