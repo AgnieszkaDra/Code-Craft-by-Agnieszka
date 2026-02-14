@@ -13,9 +13,9 @@ const HomePage = () => {
         <GitHubNotice className="section" />
         <ProjectsHero
           id="projects"
-          blockName="projects-hero"
-          className="section"
+          className="projects-hero section"
         />
+        
         <section id="panel">
           <Panel />
         </section>
