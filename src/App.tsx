@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
 import ProjectsMain from "./pages/projects/ProjectsMain";
 import '../src/styles/index.scss';
+import ProjectDetails from "./pages/projects/ProjectDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           path="/projects"
           element={ <ProjectsMain /> }
         />
+         <Route path="/projects/:projectId" element={<ProjectDetails />} />
       </Routes>
     </div>
   )

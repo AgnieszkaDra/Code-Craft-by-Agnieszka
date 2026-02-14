@@ -18,6 +18,7 @@
 import type { ReactElement } from 'react'
 import type { ProjectItem } from '../../types/main'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 interface ProjectsLayoutProps {
   projects: ProjectItem[]
@@ -61,13 +62,15 @@ const ProjectsLayout = ({
             className={`${blockName}__item ${blockName}__item--${index + 1}`}
           >
             {project.background && (
-              <div className={`${blockName}__background`}>
-                <img
-                  src={project.background}
-                  alt={`Background for ${project.label}`}
-                  className={`${blockName}__background-image`}
-                />
-              </div>
+              <Link to={`/projects/${project.id}`}>
+                <div className={`${blockName}__background`}>
+                  <img
+                    src={project.background}
+                    alt={`Background for ${project.label}`}
+                    className={`${blockName}__background-image`}
+                  />
+                </div>
+              </Link>
             )}
 
             <footer className={`${blockName}__footer`}>
