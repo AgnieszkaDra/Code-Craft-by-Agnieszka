@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { projects } from '../../data/projects'
 import type { ReactElement } from 'react'
-import { Carousel } from '../../ui/Carousel'
-import { DotsPaginator } from '../../ui/paginators/DotsPaginator'
-import type { PaginatorContext } from '../../ui/paginators/PaginatorBase'
-import Collage from '../../ui/Collage'
+// import { Carousel } from '../../ui/Carousel'
+// import { DotsPaginator } from '../../ui/paginators/DotsPaginator'
+// import type { PaginatorContext } from '../../ui/paginators/PaginatorBase'
+// import Collage from '../../ui/Collage'
 
 const ProjectDetails = (): ReactElement => {
   const { projectId } = useParams()
@@ -15,22 +15,22 @@ const ProjectDetails = (): ReactElement => {
 
   const { details } = project
 
-  const renderImageItem = (
-    image: string,
-    index: number,
-    paginator: PaginatorContext
-  ): ReactElement => (
-    <div className="project-details__carousel-item" key={index}>
-      <img
-        src={image}
-        alt={`Project image ${index + 1}`}
-        className="project-details__image"
-      />
-      <div className="project-details__carousel-footer">
-        {new DotsPaginator('sm', 'navy').render(paginator)}
-      </div>
-    </div>
-  )
+  // const renderImageItem = (
+  //   image: string,
+  //   index: number,
+  //   paginator: PaginatorContext
+  // ): ReactElement => (
+  //   <div className="project-details__carousel-item" key={index}>
+  //     <img
+  //       src={image}
+  //       alt={`Project image ${index + 1}`}
+  //       className="project-details__image"
+  //     />
+  //     <div className="project-details__carousel-footer">
+  //       {new DotsPaginator('sm', 'navy').render(paginator)}
+  //     </div>
+  //   </div>
+  // )
 
   return (
     <main id={projectId} className="project-details">
@@ -54,10 +54,10 @@ const ProjectDetails = (): ReactElement => {
         )} */}
         {project.images && project.images.length > 0 && (
           <div className="project-details__collage">
-            <Collage
+            {/* <Collage
               items={project.images}
               className="project-details__collage-wrapper"
-            />
+            /> */}
           </div>
         )}
 
