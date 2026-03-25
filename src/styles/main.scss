@@ -28,7 +28,10 @@
     justify-content: center;
     align-items: center;
     &__container {
-      padding: map-get(ui.$spacing, small) 0;
+      padding: map-get(ui.$spacing, medium);
+      @media (min-width: ui.$viewport-md) {
+        padding: map-get(ui.$spacing, small);
+      }
       width: 100%;
       background-color: black;
     }
@@ -145,11 +148,15 @@
   }
 
   &__navigate {
-    margin-left: auto;
-    margin-right: 12px;
-    &-link {
-      color: ui.$contrast-strong;
-      text-decoration: none;
+    display: none;
+    @media (min-width: ui.$viewport-lg) {
+      display: block;
+      margin-left: auto;
+      margin-right: 12px;
+      &-link {
+        color: ui.$contrast-strong;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -261,55 +268,55 @@
     }
 }
 
-// .dots-paginator {
-//   display: flex;
-//   gap: 6px;
-//   margin: 0 12px;
+.dots-paginator {
+  display: flex;
+  gap: 6px;
+  margin: 0 12px;
 
-//   .dot {
-//     border-radius: 50%;
-//     cursor: pointer;
-//     transition: background-color 0.3s;
-//     border: 2px solid ui.$white;
+  .dot {
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid ui.$white;
 
-//     &--turcoise {
-//       border-color: ui.$color-action-turcoise;
+    &--turcoise {
+      border-color: ui.$color-action-turcoise;
 
-//       &.dot--active {
-//         background-color: ui.$color-action-turcoise;
-//       }
-//     }
+      &.dot--active {
+        background-color: ui.$color-action-turcoise;
+      }
+    }
 
-//     &--navy {
-//       border-color: ui.$color-action-navy;
+    &--navy {
+      border-color: ui.$color-action-navy;
 
-//       &.dot--active {
-//         background-color: ui.$color-action-navy;
-//       }
-//     }
+      &.dot--active {
+        background-color: ui.$color-action-navy;
+      }
+    }
 
-//     &--coral {
-//       border-color: ui.$color-action-coral;
+    &--coral {
+      border-color: ui.$color-action-coral;
 
-//       &.dot--active {
-//         background-color: ui.$color-action-coral;
-//       }
-//     }
-//   }
-// }
+      &.dot--active {
+        background-color: ui.$color-action-coral;
+      }
+    }
+  }
+}
 
-// $dot-sizes: (
-//   sm: 6px,
-//   md: 10px,
-//   lg: 14px
-// );
+$dot-sizes: (
+  sm: 6px,
+  md: 10px,
+  lg: 14px
+);
 
-// @each $size, $value in $dot-sizes {
-//   .dot--#{$size} {
-//     width: $value;
-//     height: $value;
-//   }
-// }
+@each $size, $value in $dot-sizes {
+  .dot--#{$size} {
+    width: $value;
+    height: $value;
+  }
+}
 
 
 

@@ -54,7 +54,10 @@
   }
 
   &__image-wrapper {
-    height: calc(80vh * 0.9);
+    height: calc(70vh * 0.9);
+    @media (min-width: ui.$viewport-md) {
+      height: calc(80vh * 0.9);
+    }
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,6 +134,7 @@
     transform: translateX(0%);
     transition: transform 1.5s linear;
     justify-content: center;
+    z-index: 100;
 }
 
   @media (min-width: ui.$viewport-md) {

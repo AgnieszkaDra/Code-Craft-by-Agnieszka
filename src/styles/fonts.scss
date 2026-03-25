@@ -18,7 +18,8 @@ body {
   --font-base: 'DM Sans', sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
-  --font-weight-bold: 700; 
+  --font-weight-bold: 700;
+  --font-heading-scale: 0.5;
 }
 
 @mixin fluid-type-preset($name) {
@@ -73,6 +74,54 @@ $typography: (
   font-weight: 500;
   line-height: 32px;
   letter-spacing: 0;
+}
+
+/* ===== MOBILE (default) ===== */
+
+h1, .h1 {
+  font-size: calc(var(--font-heading-scale) * 3rem);
+}
+
+h2, .h2 {
+  font-size: calc(var(--font-heading-scale) * 2.6rem);
+}
+
+h3, .h3 {
+  font-size: calc(var(--font-heading-scale) * 2.2rem);
+}
+
+h4, .h4 {
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+}
+
+h5, .h5 {
+  font-size: calc(var(--font-heading-scale) * 1.2rem);
+}
+
+
+/* ===== DESKTOP ≥750px ===== */
+
+@media only screen and (min-width: 750px) {
+
+  h1, .h1 {
+    font-size: calc(var(--font-heading-scale) * 4rem);
+  }
+
+  h2, .h2 {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+  }
+
+  h3, .h3 {
+    font-size: calc(var(--font-heading-scale) * 2.6rem);
+  }
+
+  h4, .h4 {
+    font-size: calc(var(--font-heading-scale) * 2rem);
+  }
+
+  h5, .h5 {
+    font-size: calc(var(--font-heading-scale) * 1.6rem);
+  }
 }
 
 

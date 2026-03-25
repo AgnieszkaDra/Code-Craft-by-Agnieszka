@@ -9,6 +9,8 @@
 #root {
   margin: 0 auto;
   text-align: center;
+  --grid-desktop-horizontal-spacing: 4px;
+  --grid-mobile-vertical-spacing: 4px;
 }
  
 html {
@@ -89,7 +91,10 @@ button {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 3rem 0;
+  @media (min-width: ui.$viewport-md) {
+    padding: 5rem 0;
+  }
   margin: auto;
 }
 
@@ -106,4 +111,14 @@ button {
 
 .link--external {
   text-decoration: underline;
+}
+
+.collage {
+  display: grid;
+  @media (min-width: ui.$viewport-lg) {
+    grid-auto-flow: column;
+    grid-column-gap: var(--grid-desktop-horizontal-spacing);
+    grid-row-gap: var(--grid-desktop-vertical-spacing);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
